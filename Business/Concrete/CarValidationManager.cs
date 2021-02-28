@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.Constants;
+using Core.Utilities.Results;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -8,36 +10,54 @@ namespace Business.Concrete
 {
     public class CarValidationManager : ICarValidationService
     {
-        public bool Validate(Car car)
+        public IResult Validate(Car car)
         {
-            //
-            return NameValidate(car)
-                && DailyPriceValidate(car);
+            bool result = (NameValidate(car).Success && DailyPriceValidate(car).Success);
+            string message = NameValidate(car).Message + "\n" + DailyPriceValidate(car).Message;
+            if (result) 
+            {
+                return new SuccessResult(message);
+            }
+            else
+            {
+                return new ErrorResult(message);
+            }
+        }
+        public IResult UpdateValidate(Car car)
+        {
+            bool result = (NameValidate(car).Success && DailyPriceValidate(car).Success);
+            string message = NameValidate(car).Message + "\n" + DailyPriceValidate(car).Message;
+            if (result)
+            {
+                return new SuccessResult(message);
+            }
+            else
+            {
+                return new ErrorResult(message);
+            }
         }
 
-        private bool DailyPriceValidate(Car car)
+        private IResult DailyPriceValidate(Car car)
         {
             if (car.DailyPrice > 0)
             {
-                return true;
+                return new SuccessResult();
             }
             else
             {
-                Console.WriteLine("The daily rental fee of the car must be greater than 0");
-                return false;
+                return new ErrorResult(Messages.DailyPriceGreater);
             }
         }
 
-        private bool NameValidate(Car car)
+        private IResult NameValidate(Car car)
         {
             if (car.CarName.Length >= 2)
             {
-                return true;
+                return new SuccessResult();
             }
             else
             {
-                Console.WriteLine("The car name must be at least 2 characters");
-                return false;
+                return new ErrorResult(Messages.CarNameLeast);
             }
         }
 

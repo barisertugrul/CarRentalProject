@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace ConsoleUI.Concrete
 {
-    public class ConsoleTexts
+    public static class ConsoleTexts
     {
         //Settings
         private const int _frameWidth = 111;
@@ -77,7 +77,6 @@ namespace ConsoleUI.Concrete
 
         public static void WriteMenuItems(string[] menuItems)
         {
-            string text;
             if(menuItems != null && menuItems.Length > 0)
             {
                 foreach (string item in menuItems)
