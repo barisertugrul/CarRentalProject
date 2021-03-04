@@ -154,7 +154,14 @@ namespace ConsoleUI.Concrete
                 PropertyInfo[] props = data.GetType().GetProperties();
                 foreach (var prop in props)
                 {
-                    Console.Write(prop.GetValue(data).ToString().Trim().PadRight(padding));
+                    if(prop.GetValue(data) != null)
+                    {
+                        Console.Write(prop.GetValue(data).ToString().Trim().PadRight(padding));
+                    }
+                    else
+                    {
+                        Console.Write("NULL".PadRight(padding));
+                    }
 
                 }
                 Console.WriteLine("\n");

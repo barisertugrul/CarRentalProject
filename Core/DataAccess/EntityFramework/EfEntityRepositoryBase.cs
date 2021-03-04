@@ -14,6 +14,7 @@ namespace Core.DataAccess.EntityFramework
     {
         public void Add(TEntity entity)
         {
+            //Todo return new item index
             using (TContext context = new TContext())
             {
                 var addedEntity = context.Entry(entity);

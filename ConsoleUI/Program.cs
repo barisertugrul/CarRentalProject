@@ -6,8 +6,8 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            MainConsoleManager mainManager = new MainConsoleManager();
-            mainManager.MainMenu();
+            //MainConsoleManager mainManager = new MainConsoleManager();
+            MainConsoleManager.MainMenu();
         }
     }
 }

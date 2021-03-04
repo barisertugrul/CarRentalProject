@@ -6,6 +6,7 @@ namespace Business.Constants
 {
     public static class Messages
     {
+        public static string DefaultMenuTitle = "Menu";
         public static string DailyPriceGreater = "The daily rental fee of the car must be greater than 0";
         public static string CarNameLeast = "The car name must be at least 2 characters";
         public static string NewCarAdded = "New car uccessfully added";
@@ -24,6 +25,9 @@ namespace Business.Constants
         public static string CarMenuTitle = "CAR MANAGER";
         public static string ColorMenuTitle = "COLOR MANAGER";
         public static string BrandMenuTitle = "BRAND MANAGER";
+        public static string RentalMenuTitle = "RENTAL MANAGER";
+        public static string UserMenuTitle = "USER MANAGER";
+        public static string CustomerMenuTitle = "CUSTOMER MANAGER";
         public static string FormHeaderCarAddNew = "ADD NEW CAR";
         public static string FormHeaderCarUpdate = "CAR UPDATE FORM";
         public static string FormHeaderCarDelete = "CAR DELETE FORM";
@@ -33,11 +37,27 @@ namespace Business.Constants
         public static string FormHeaderBrandAddNew = "ADD NEW BRAND";
         public static string FormHeaderBrandUpdate = "BRAND UPDATE FORM";
         public static string FormHeaderBrandDelete = "BRAND DELETE FORM";
-        public static string ListHeaderCar = "CARS";
+        public static string FormHeaderUserAddNew = "ADD NEW USER";
+        public static string FormHeaderUserUpdate = "USER UPDATE FORM";
+        public static string FormHeaderUserDelete = "USER DELETE FORM";
+        public static string FormHeaderCustomerAddNew = "ADD NEW CUSTOMER";
+        public static string FormHeaderCustomerUpdate = "CUSTOMER UPDATE FORM";
+        public static string FormHeaderCustomerDelete = "CUSTOMER DELETE FORM";
+        public static string FormHeaderRentalAddNew = "ADD NEW RENTAL";
+        public static string FormHeaderRentalUpdate = "RENTAL UPDATE FORM";
+        public static string FormHeaderRentalDelete = "RENTAL DELETE FORM";
         public static string ListHeaderColorSelect = "COLORS";
         public static string ListHeaderBrandSelect = "BRANDS";
+        public static string ListHeaderCarSelect = "CARS";
+        public static string ListHeaderUserSelect = "USERS";
+        public static string ListHeaderCustomerSelect = "CUSTOMERS";
+        public static string ListHeaderRentalSelect = "RENTALS";
+        public static string ListHeaderCar = "CARS LIST";
         public static string ListHeaderColor = "COLORS LIST";
         public static string ListHeaderBrand = "BRANDS LIST";
+        public static string ListHeaderUser = "USERS LIST";
+        public static string ListHeaderCustomer = "CUSTOMERS LIST";
+        public static string ListHeaderRental = "RENTALS LIST";
         public static string TypeCarName = "Type Car Name";
         public static string TypeColorName = "Type Color Name";
         public static string SelectBrandId = "Select Brand ID";
@@ -56,5 +76,22 @@ namespace Business.Constants
         public static string TypeBrandName = "Type Brand Name";
         public static string SelectBrandIdToUpdate = "Select Brand ID to Update";
         public static string SelectBrandIdToDelete = "Select Brand ID to Delete";
+        public static string ListMenuHeaderCar = "CAR LISTS";
+        public static string MessageForReturnToMenu = "Press any key to return to the menu";
+        public static string TypeUserFirstName = "Type first name";
+        public static string TypeUserLastName = "Type last name";
+        public static string TypeUserEmail = "Type email address";
+        public static string TypeUserPassword = "Type password";
+        public static string TypeUserConfirmPassword = "Confirm the password";
+        public static string NotComfirmPassword = "The password and confirm password must be the same. Please check and try again.";
+        public static string TypeCustomerCompanyName = "Type customer's company name";
+        public static string SelectUserId = "Select User ID: ";
+        public static string SelectCustomerId = "Select Customer ID";
+        public static string SelectCarId = "Select Car ID";
+        public static string TypeRentalDate = "Type rental date(dd.mm.YYYY)";
+        public static string InvalidDate = "Invalid date, please retry";
+        public static string ExistCarRental = "The specified car has already been rented.";
+        public static string SelectRentalIdToDelete = "Select Rental ID to Delete";
+        public static string SelectRentalIdToUpdate= "Select Rental ID to Update";
     }
 }

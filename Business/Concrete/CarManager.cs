@@ -71,29 +71,39 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CarDeleted);
         }
 
-        public IDataResult<List<CarDetailDto>> GetCarDetails()
+        public IDataResult<List<CarDetailDto>> GetAllCarDetails()
         {
-            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails());
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetAllDetails());
         }
 
-        public IDataResult<List<CarDetailDto>> GetCarDetailsBy(Expression<Func<Car, bool>> filter = null)
+        public IDataResult<CarDetailDto> GetCarDetailsById(int carId)
         {
-            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetailsBy(filter));
+            return new SuccessDataResult<CarDetailDto>(_carDal.GetDetails(c=> c.CarId == carId));
         }
 
         public IDataResult<List<CarDetailDto>> GetCarDetailsByColorId(int colorId)
         {
-            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetailsBy(c => c.ColorId == colorId));
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetAllDetailsBy(c => c.ColorId == colorId));
         }
 
         public IDataResult<List<CarDetailDto>> GetCarDetailsByBrandId(int brandId)
         {
-            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetailsBy(c => c.BrandId == brandId));
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetAllDetailsBy(c => c.BrandId == brandId));
         }
 
-        public IDataResult<int> CarsCount()
+        public IDataResult<int> Count()
         {
             return new SuccessDataResult<int>(_carDal.GetAll().Count);
+        }
+
+        public IDataResult<List<CarDetailDto>> GetRentableCarDetails()
+        {
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetRentableDetails());
+        }
+
+        public IDataResult<List<CarDetailDto>> GetRentedCarDetails()
+        {
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetRentedDetails());
         }
     }
 }
