@@ -99,6 +99,7 @@ namespace ConsoleUI.Concrete.Screens
                     break;
                 case 5:
                     Rented();
+                    ListForm();
                     break;
                 case 6:
                     Menu();
@@ -112,12 +113,22 @@ namespace ConsoleUI.Concrete.Screens
 
         private void Rented()
         {
-            throw new NotImplementedException();
+            List<CarDetailDto> cars = RentedCarList();
+            string[] headers = { "Car ID", "Car Name", "Brand Name", "Color Name", "Model Year", "Daily Price", "Description" };
+            ConsoleTexts.WriteDataList<CarDetailDto>(Messages.ListHeaderRentedCars, cars, headers);
+
+            Console.Write(Messages.MessageForReturnToMenu);
+            Console.ReadKey();
         }
 
         private void AvailableCars()
         {
-            throw new NotImplementedException();
+            List<CarDetailDto> cars = RentableCarList();
+            string[] headers = { "Car ID", "Car Name", "Brand Name", "Color Name", "Model Year", "Daily Price", "Description" };
+            ConsoleTexts.WriteDataList<CarDetailDto>(Messages.ListHeaderAvailableCars, cars, headers);
+
+            Console.Write(Messages.MessageForReturnToMenu);
+            Console.ReadKey();
         }
 
         private void ListByColor()
@@ -236,6 +247,11 @@ namespace ConsoleUI.Concrete.Screens
         public List<CarDetailDto> RentableCarList()
         {
             return _carManager.GetRentableCarDetails().Data;
+        }
+
+        public List<CarDetailDto> RentedCarList()
+        {
+            return _carManager.GetRentedCarDetails().Data;
         }
     }
 }

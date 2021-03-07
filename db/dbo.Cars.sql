@@ -1,7 +1,7 @@
 USE [RentACar]
 GO
 
-/****** Object: Table [dbo].[Cars] Script Date: 5.3.2021 00:23:33 ******/
+/****** Object: Table [dbo].[Cars] Script Date: 7.3.2021 03:03:41 ******/
 SET ANSI_NULLS ON
 GO
 

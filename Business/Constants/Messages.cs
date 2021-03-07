@@ -93,5 +93,7 @@ namespace Business.Constants
         public static string ExistCarRental = "The specified car has already been rented.";
         public static string SelectRentalIdToDelete = "Select Rental ID to Delete";
         public static string SelectRentalIdToUpdate= "Select Rental ID to Update";
+        public static string ListHeaderAvailableCars = "AVAILABLE CARS";
+        public static string ListHeaderRentedCars = "ALREADY RENTED CARS";
     }
 }

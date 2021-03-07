@@ -46,7 +46,7 @@ namespace Business.Concrete
             {
                 return new ErrorResult(result.Message);
             }
-            _carDal.Add(car);
+            _carDal.Update(car);
             return new SuccessResult(Messages.CarUpdated);
         }
 
